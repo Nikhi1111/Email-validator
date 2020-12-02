@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Email validation checker</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div>
+		<h3>Email Validation Checker</h3>
+		<form id="form" action="#">
+			<div class="inputBox">
+				<input type="text" id="email" placeholder="Enter Email Address" onkeyup="validate();">
+				<span class="indicator"></span>
+			</div>
+		 </form>
+	 </div>
+	 <script>
+	 	function validate(){
+	 		const form = document.getElementById('form');
+	 		const email = document.getElementById('email').value; 
+	 		const pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/
+
+	 		if(email.match(pattern)){
+	 			form.classList.add('valid')
+	 			form.classList.remove('invalid')
+	 		}else{
+	 			form.classList.add('invalid')
+	 			form.classList.remove('valid')
+	 		}
+	 	}
+	 </script>
+ </body>
+</html>
